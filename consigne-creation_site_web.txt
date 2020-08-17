@@ -1,0 +1,31 @@
+
+Un site avec 5 pages et un menu de navigation:
+
+Le site permmetrra d'enregistrer des utilisateurs (page d'inscription), 
+de les afficher tous ou d'en chercher (page de recherche),
+de supprimer les utilisateurs (page d'administration). 
+
+
+1) Une page d'accueil
+Avec un titre Un paragraphe de présentation, une image
+
+2) Une page de connexion
+avec un formulaire (login, mot de passe)
+
+3) Une page d'inscription
+Avec un formulaire (Nom, prenom, date de naissance, mail, login, mot de passe)
+Doit afficher le contenu du formulaire dans un console log lors de l'envoi.
+
+4) Une page de recherche
+avec un champ de recherche et une table de résultats
+Doit générer une table en fonction d'un tableau d'utilisateurs.
+
+5) Une page d'administration avec la liste des utilisateurs et la possibilité de les supprimer
+
+
+J'attends donc pour le lundi de la rentrée, dernier délai et en message privé,
+ l'adresse de vos git avec le projet COMPLET (création d'une bdd, du site web avec nginx et des web services avec flask)
+ mis en place avec docker et docker compose.
+C'est important car c'est cette infrastructure que vous devrez faire attaquer par vos camarades afin de la sécuriser.
+
+

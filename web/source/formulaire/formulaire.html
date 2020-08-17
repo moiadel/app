@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSCRIPTION</title>
+</head>
+<body>
+    <a href="../index.html">Retour Menu</a>
+    <a href="../connection/connection.html" > page de connexion</a>
+    <a href="../formulaire/formulaire.html"> formulaire d'inscription</a>
+    <a href="../recherche/search.html"> page de recherche</a>
+    <a href="../admin/admin.html"> page d'admin</a>
+
+    <h3>Formulaire d'inscription</h3>
+    <form id="newuser">
+        <div>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="lastname">Prénom :</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
+        <div>
+            <label for="birth">Date de naissance :</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div>
+            <label for="mail">Email :</label>
+            <input type="email" id="mail" name="mail" required>
+        </div>
+        <div>
+            <label for="login">Login :</label>
+            <input type="text" id="login" name="login" required>
+        </div>
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="pass" name="password" required>
+        </div>
+        <input type="submit" value="S'inscrire">
+        <input type="reset" value="Annuler" />
+    </form>
+    <script src="./formulaire.js"></script>
+</body>
+</html>

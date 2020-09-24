@@ -22,3 +22,8 @@ def update_user(userDto , user_id):
 def delete_user(user_id):
     return userRepo.delete_user(user_id)
 
+def create_user(user):
+    user.password = bcrypt.hash(user.password)
+
+
+

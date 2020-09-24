@@ -12,6 +12,10 @@ ENV FLASK_APP app.py
 # RUN : permet d'exécuter une commande shell
 RUN apk add --no-cache gcc musl-dev linux-headers
 
+
+RUN apk add libffi-dev openssl-dev
+RUN apk --no-cache --update add build-base
+
 # COPY : permet de copier un fichier depuis l'OS hôte dans le conteneur
 COPY requirements.txt requirements.txt
 

@@ -1,27 +1,33 @@
-const submit = (event) => {
-   event.preventDefault()
-   console.log('test de form');
-   const user = {}
-   const form = event.target
-   for (input of form) {
-       if (input.id !== "") {
-           user[input.id] = input.value
-       }
-   }
-   console.log(user)
+const renderUsers = (json) => {
+    console.log(json)
+    const table = document.querySelector('#table_recherche')
+    for (user of json) {
+        const tr = table.insertRow()
+        for (key in user) {
+            let cell = tr.insertCell()
+            cell.innerHTML = user[key]
+        }
+    }
 }
 
-document.querySelector('#newuser').addEventListener('submit', submit)
 
 
+///fetch('http://192.168.99.100/inscription/inscription').then (resp=>resp.json).then (json=>renderUsers(json))
 
-// on fait une requete avec fetch on recoit une reponse et dans la reponse on recupere le json 
-// et qd j'ai le json je fais un traitement,ici renderusers(json) pr recup les users ou console.log(json)
-
-fetch('http://127.0.0.1:5000/api/users')
-   .then(resp => resp.json())
-   .then(json=>renderusers(json)
-   )
+const send = (event) => {
+    
+    event.preventDefault();
+    
 
 
+    fetch('http://127.0.0.1:5000/register')
+        .then(function(response) {
+            response.json()
+                .then(function(value) {
+                    renderUsers(value);
+                })
+        })
+}
 
+
+document.querySelector("#formrecherche").addEventListener('submit', send);

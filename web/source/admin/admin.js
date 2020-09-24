@@ -1,10 +1,20 @@
-let user = [
-    {nom:"uchiha", prenom:"itachi"},
-    {nom:"uchiha", prenom:"sasuke"},
-    {nom:"uchiha", prenom:"madara"},
-    {nom:"takamura", prenom:"mamoru"},
-    {nom:"guerrier", prenom:"sangohan"},
-]
+let user = []
+
+const getUsers = () => {
+    fetch('http://127.0.0.1:5000/api/user').then(resp => resp.json()).then(json => renderUsers(json))
+}
+
+let renderUsers = (json) => {
+    for (let i in json) {
+        users.push({ id: json[i]['id'], nom: json[i]['nom'], prenom: json[i]['prenom'], mail: json[i]['mail'], naissance: json[i]['naissance'], username: json[i]['username'] })
+    }
+    let table = document.querySelector("table")
+    let tbody = document.querySelector("tbody")
+    let data = Object.keys(users[0])
+    generateTableHead(table, data)
+    generateTable(tbody, users)
+
+}
 
 const generateTableHead = (table, data) => {
     let thead = table.createTHead();
@@ -65,25 +75,25 @@ function Remove(button) {
     }
 };
 
-const getUsers = () => {
-    console.log('get amm users')
-    const options = {
-        method: 'GET',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    }
-    fetch('http://127.0.0.1:5000/api/users', options)
-    .then(resp => resp.json())
-    .then(json => console.log(json))
-}
+// const getUsers = () => {
+//     console.log('get amm users')
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'Access-Control-Allow-Origin': '*'
+//         }
+//     }
+//     fetch('http://127.0.0.1:5000/api/users', options)
+//     .then(resp => resp.json())
+//     .then(json => console.log(json))
+// }
 
-let table = document.querySelector("table")
-let tbody = document.querySelector("tbody")
-let indice = Object.keys(user[0])
-generateTableHead(table, indice);
-generateTable(tbody, user);
+getUsers()
+
+// let table = document.querySelector("#table_admin")
+// let tbody = document.querySelector("#table_body")
+// let indice = Object.keys(user[0])
+// generateTableHead(table, indice);
+// generateTable(tbody, user);
 
 
-
-document.querySelector('#newuser').addEventListener('click', getUsers )
